@@ -32,7 +32,6 @@ import flixel.group.FlxSpriteGroup.FlxTypedSpriteGroup;
 
 using StringTools;
 using funkin.backend.utils.CoolUtil;
-#end
 
 #if android
 import extension.androidtools.content.Context as AndroidContext;
@@ -43,4 +42,5 @@ import extension.androidtools.Settings as AndroidSettings;
 import extension.androidtools.Tools as AndroidTools;
 import extension.androidtools.os.Build.VERSION as AndroidVersion;
 import extension.androidtools.os.Build.VERSION_CODES as AndroidVersionCode;
+#end
 #end
