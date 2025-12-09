@@ -1,5 +1,6 @@
 package funkin.backend.system.updating;
 
+#If !android
 import funkin.backend.system.github.GitHubRelease;
 import funkin.backend.utils.ZipUtil;
 import haxe.io.Path;
@@ -53,7 +54,7 @@ class AsyncUpdater {
 		downloadFiles();
 	}
 
-	/*public function installFiles(files:Array<String>) {
+	public function installFiles(files:Array<String>) {
 		progress.step = INSTALLING;
 		progress.files = files.length+1;
 		for(k=>e in files) {
@@ -166,7 +167,7 @@ class AsyncUpdater {
 		#end
 
 		FileSystem.createDirectory(path);
-	}*/
+	}
 }
 
 class UpdaterProgress {
@@ -189,3 +190,4 @@ enum abstract UpdaterStep(Int) {
 	var DOWNLOADING_EXECUTABLE = 2;
 	var INSTALLING = 3;
 }
+#end
