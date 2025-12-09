@@ -1,5 +1,6 @@
 package funkin.backend.system.updating;
 
+#if !android
 import funkin.backend.system.github.GitHub;
 import funkin.backend.system.github.GitHubRelease;
 #if ALLOW_MULTITHREADING
@@ -157,3 +158,4 @@ typedef UpdateCheckCallback = {
 
 	@:optional var date:Date;
 }
+#end
