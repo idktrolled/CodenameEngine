@@ -15,7 +15,7 @@ jobs:
         uses: actions/setup-java@main
         with:
           distribution: 'temurin'
-          java-version: '17'
+          java-version: '21'
       - name: Setting up Haxe
         uses: krdlab/setup-haxe@v2
         with:
@@ -32,8 +32,7 @@ jobs:
           haxelib run lime config JAVA_HOME $JAVA_HOME
           haxelib run lime config ANDROID_SETUP true
       - name: Building the game
-        run: |
-          haxelib run lime build android
+        run: haxelib run lime build android -final
       # - name: Tar files
       #   run: tar -zcvf CodenameEngine.tar.gz -C export/release/linux/bin .
       - name: Uploading artifact (executable)
