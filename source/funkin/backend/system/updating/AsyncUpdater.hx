@@ -15,6 +15,7 @@ import sys.io.FileOutput;
 
 class AsyncUpdater {
 	// NON ASYNC STUFF
+	#if !android
 	#if REGION
 	public function new(releases:Array<GitHubRelease>) {
 		this.releases = releases;
@@ -47,8 +48,7 @@ class AsyncUpdater {
 
 	public var lastTime:Float = 0;
 	public var oldBytesLoaded:Float = 0;
-
-	#if !android
+	
 	public function installUpdates() {
 		prepareInstallationEnvironment();
 		downloadFiles();
