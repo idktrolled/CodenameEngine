@@ -23,7 +23,7 @@ import openfl.text.TextFormat;
 import openfl.utils.AssetLibrary;
 import sys.FileSystem;
 import sys.io.File;
-#if !android
+#if android
 import android.content.Context;
 import android.os.Build;
 #end
@@ -225,7 +225,7 @@ class Main extends Sprite
 		if (!noCwdFix && !sys.FileSystem.exists('manifest/default.json')) {
 			Sys.setCwd(haxe.io.Path.directory(Sys.programPath()));
 		}
-		#elseif !android
+		#elseif android
 		Sys.setCwd(haxe.io.Path.addTrailingSlash(VERSION.SDK_INT > 30 ? Context.getObbDir() : Context.getExternalFilesDir()));
 		#elseif (ios || switch)
 		Sys.setCwd(haxe.io.Path.addTrailingSlash(openfl.filesystem.File.applicationStorageDirectory.nativePath));
