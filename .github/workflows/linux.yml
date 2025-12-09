@@ -22,12 +22,9 @@ jobs:
           haxe-version: 4.3.7
       - run: |
           echo "HXCPP_COMPILE_CACHE=~/.hxcpp" >> $GITHUB_ENV
-      - name: Installing LibVLC
-        run: |
-          sudo apt-get install libvlc-dev libvlccore-dev
       - name: Installing/Updating libraries
         run: |
-          haxe -cp commandline -D analyzer-optimize --run Main setup a
+          haxe -cp commandline -D analyzer-optimize --run Main setup -s --no-vscheck
       - name: Configure Android
         run: |
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
