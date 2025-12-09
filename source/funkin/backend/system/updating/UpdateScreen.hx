@@ -1,5 +1,6 @@
 package funkin.backend.system.updating;
 
+#if !android
 import flixel.math.FlxRect;
 import flixel.sound.FlxSound;
 import flixel.ui.FlxBar;
@@ -136,3 +137,4 @@ class UpdateScreen extends MusicBeatState {
 		}
 	}
 }
+#end
