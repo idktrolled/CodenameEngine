@@ -53,7 +53,7 @@ class AsyncUpdater {
 		downloadFiles();
 	}
 
-	public function installFiles(files:Array<String>) {
+	/*public function installFiles(files:Array<String>) {
 		progress.step = INSTALLING;
 		progress.files = files.length+1;
 		for(k=>e in files) {
@@ -166,7 +166,7 @@ class AsyncUpdater {
 		#end
 
 		FileSystem.createDirectory(path);
-	}
+	}*/
 }
 
 class UpdaterProgress {
