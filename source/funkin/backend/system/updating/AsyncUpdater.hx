@@ -1,6 +1,5 @@
 package funkin.backend.system.updating;
 
-#if !android
 import funkin.backend.system.github.GitHubRelease;
 import funkin.backend.utils.ZipUtil;
 import haxe.io.Path;
@@ -190,4 +189,3 @@ enum abstract UpdaterStep(Int) {
 	var DOWNLOADING_EXECUTABLE = 2;
 	var INSTALLING = 3;
 }
-#end
