@@ -1,6 +1,5 @@
 package funkin.backend.system.updating;
 
-#if !android
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.math.FlxPoint;
 import funkin.backend.FunkinText;
@@ -161,4 +160,3 @@ class UpdateAvailableScreen extends MusicBeatState {
 		oldPos.put();
 	}
 }
-#end
