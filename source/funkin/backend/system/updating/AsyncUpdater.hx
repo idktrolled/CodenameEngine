@@ -47,13 +47,13 @@ class AsyncUpdater {
 
 	public var lastTime:Float = 0;
 	public var oldBytesLoaded:Float = 0;
-	
+
+	#if !android
 	public function installUpdates() {
 		prepareInstallationEnvironment();
 		downloadFiles();
 	}
-
-	#if !android
+	
 	public function installFiles(files:Array<String>) {
 		progress.step = INSTALLING;
 		progress.files = files.length+1;
