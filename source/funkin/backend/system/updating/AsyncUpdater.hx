@@ -15,7 +15,6 @@ import sys.io.FileOutput;
 
 class AsyncUpdater {
 	// NON ASYNC STUFF
-	#if !android
 	#if REGION
 	public function new(releases:Array<GitHubRelease>) {
 		this.releases = releases;
@@ -38,6 +37,10 @@ class AsyncUpdater {
 	#if mac
 	public static var executableGitHubName:String = "update-mac";
 	public static var executableName:String = "CodenameEngine";
+	#end
+	#if android
+	public static var executableGitHubName:String = "";
+	public static var executableName:String = "";
 	#end
 
 	public var releases:Array<GitHubRelease>;
@@ -168,7 +171,6 @@ class AsyncUpdater {
 
 		FileSystem.createDirectory(path);
 	}
-	#end
 }
 class UpdaterProgress {
 	public var step:UpdaterStep = PREPARING;
