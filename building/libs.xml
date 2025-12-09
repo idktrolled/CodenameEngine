@@ -42,6 +42,9 @@
 		<cmd inLib="hxcpp" dir="tools/hxcpp" cmd="haxe compile.hxml" />
 	</if>
 
+	<!-- Build mobile -->
+	<git name="extension-androidtools" url="https://github.com/MAJigsaw77/extension-androidtools" skipDeps="true" />
+
 	<!-- Lime Building -->
 	<!-- <if cond="build-lime || all">
 		<print pretty="true">Rebuilding Lime...</print>
