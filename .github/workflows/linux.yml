@@ -10,11 +10,16 @@ jobs:
     runs-on: ubuntu-24.04
     steps:
       - name: Pulling the new commit
-        uses: actions/checkout@v4
+        uses: actions/checkout@main
       - name: Setting up Haxe
-        uses: krdlab/setup-haxe@v2
+        uses: krdlab/setup-haxe@master
         with:
           haxe-version: 4.3.7
+      - name: Setup Android NDK
+        id: setup-ndk
+        uses: nttld/setup-ndk@main
+        with:
+          ndk-version: r25c
       - run: |
           echo "HXCPP_COMPILE_CACHE=~/.hxcpp" >> $GITHUB_ENV
       - name: Installing/Updating libraries
@@ -23,20 +28,20 @@ jobs:
       - name: Configure Android
         run: |
           haxelib run lime config ANDROID_SDK $ANDROID_HOME
-          haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_LATEST_HOME
+          haxelib run lime config ANDROID_NDK_ROOT $ANDROID_NDK_HOME
           haxelib run lime config JAVA_HOME $JAVA_HOME_17_X64
           haxelib run lime config ANDROID_SETUP true
       - name: Building the game
-        run: haxelib run lime build android -final
+        run: haxelib run lime build android
       # - name: Tar files
       #   run: tar -zcvf CodenameEngine.tar.gz -C export/release/linux/bin .
       - name: Uploading artifact (executable)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: Codename Engine (Executable Only)
           path: export/release/android/bin/CodenameEngine
       - name: Uploading artifact (entire build)
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@main
         with:
           name: Codename Engine
           path: export/release/android/bin/
