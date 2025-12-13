@@ -27,7 +27,7 @@ jobs:
           haxelib run lime config JAVA_HOME $JAVA_HOME_21_arm64 
           haxelib run lime config ANDROID_SETUP true
       - name: Building the game
-        run: haxelib run lime build android -debug
+        run: haxelib run lime build android
       # - name: Tar files
       #   run: tar -zcvf CodenameEngine.tar.gz -C export/release/linux/bin .
       - name: Uploading artifact (executable)
