@@ -30,11 +30,6 @@ jobs:
         run: haxelib run lime build android
       # - name: Tar files
       #   run: tar -zcvf CodenameEngine.tar.gz -C export/release/linux/bin .
-      - name: Uploading artifact (executable)
-        uses: actions/upload-artifact@main
-        with:
-          name: Codename Engine (Executable Only)
-          path: export/release/android/bin/CodenameEngine
       - name: Uploading artifact (entire build)
         uses: actions/upload-artifact@main
         with:
