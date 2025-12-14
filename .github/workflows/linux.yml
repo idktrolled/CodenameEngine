@@ -1,5 +1,5 @@
 
-name: Linux Build
+name: Linux Buil
 on:
   push:
   workflow_dispatch:
